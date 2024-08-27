@@ -1,51 +1,51 @@
-/**
+/*
     L.C 648. Replace Words
 
-            Approach: Trie to find the shortest occurrence of a word
+    Approach: Trie to find the shortest occurrence of a word
 
 
-            Working:
-            Declare a TrieNode
-            Declare and initialize a ROOT
+    Working:
+        Declare a TrieNode
+        Declare and initialize a ROOT
 
-            replaceWords()
+        replaceWords()
             Add all the DICTIONARY elements to the trie by implementing an insert(word) method
             convert the SENTENCE into array of words
             Declare and initialize RESULT -> StringBuffer
 
             Iterate through the string array
-            //add white space characters before each word when i!=0
-            get the current word
-            Declare a variable CURR = ROOT
-            Declare sb -> StringBuffer
-            iterate through each character
+                //add white space characters before each word when i!=0
+                get the current word
+                Declare a variable CURR = ROOT
+                Declare sb -> StringBuffer
+                iterate through each character
 
-            get the character index word[i] - 'a'      //zero indexed
-            check if the CURR.children[index] is null  //the character is not present
-            OR if CURR.isEnd is true           //to get the first occurring shortest string
+                    get the character index word[i] - 'a'      //zero indexed
+                    check if the CURR.children[index] is null  //the character is not present
+                            OR if CURR.isEnd is true           //to get the first occurring shortest string
 
-            break
-            sb.append() the current char to a string buffer
+                        break
+                    sb.append() the current char to a string buffer
 
-            check CURR.isEnd is true
-            RESULT.append(sb)
-            else
-            append the original word
+                check CURR.isEnd is true
+                    RESULT.append(sb)
+                else
+                    append the original word
 
             return RESULT as string
 
-            m - length of the string array
-            n - length of the words in the string array
-            k - length of the input List -> dictionary
-            l - length of the words in the dictionary
+    m - length of the string array
+    n - length of the words in the string array
+    k - length of the input List -> dictionary
+    l - length of the words in the dictionary
 
 
-            Time Complexity: O(k*l) + O(m*n)
+    Time Complexity: O(k*l) + O(m*n)
 
             O(m*n)   //time taken to find and replace words
             O(k*l) // time taken to insert the words from the dictionary to a Trie
 
-            Space Complexity: O(k*l) //space taken by insertion in a Trie
+    Space Complexity: O(k*l) //space taken by insertion in a Trie
 
 */
 
